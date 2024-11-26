@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* CSS Variables */
+:root {
+    --primary: #1D3B53;
+    --body: #EFEFEF;
+    --button1: #1A82C4;
+    --shadow: rgba(91, 93, 95, 0.2) 0px 8px 24px;
+    --white: #ffffff;
+    --black: #000000;
+}
+body{
+    background: #EFEFEF;    
+    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar-top {
+    background-color: #a6abaf;
+    padding: 10px 20px; 
+    border-radius: 0 0 10px 10px; 
+    margin: 0px 10px;
+    margin-bottom: 10px;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    list-style: none; 
+    margin: 0 ; 
+    padding: 0;
+}
+.nav-item {
+    margin: 0 15px; 
+}
+.nav-link {
+    text-decoration: none; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+}
+.nav-link i {
+    margin-right: 8px;
+}
+.social-icons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.social-icons li {
+    margin-left: 15px; 
+}
+.social-icons a {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.nav-link:hover{
+    color: var(--primary);
+}
+.social-icons a:hover {
+    color: var(--primary); 
+}
+header {
+    background-color: var(--primary);
+}
+.header {
+    margin: 1px 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start; 
+    align-items: center;
+    gap: 5px; 
+}
+.logo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+}
+
+.logo p {
+    white-space: nowrap; 
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    text-align: center; 
+}
+
+.menu {
+    display: none; 
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    z-index: 100; 
+}
+.menu li {
+    list-style: none; 
+    margin: 0; 
+}
+.menu li a {
+    text-decoration: none; 
+    color: var(--white); 
+    padding: 16px; 
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+}
+.menu li a::after {
+    content: "";
+    display: block; 
+    height: 2px; 
+    width: 100%; 
+    background: #ffffff; 
+    position: absolute; 
+    bottom: 5px; 
+    left: 0; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1); 
+}
+
+.frm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(rgba(82, 82, 82, 0.5), rgba(106, 103, 103, 0.5)),url('img/newcollage.jpg'); 
+    background-size: 100% 100%;
+    margin: 20px;
+    border-radius: 20px 20px 0 0;
+    height: 80vh;
+}
+.frm form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(212, 234, 241, 0.7);
+    padding: 0 30px 30px 30px;
+    border-radius: 10px;
+    
+
+}
+.frm form legend{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.frm .form input{
+    width: 300px;
+    height: 50px;
+    margin: 20px 0;
+    border: none;
+}
+.frm .form input[placeholder]{
+    padding-left: 20px;
+}
+.frm form .check{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.frm form .check .box{
+    display: flex;
+    align-items: center;
+}
+.frm form .check button{
+    padding: 10px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: blue;
+}
+.frm form input[type=submit]{
+    width: 250px;
+    height:40px;
+    border-radius: 10px;
+    background-color: #1A82C4;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .icon {
+        display: block; /* Show icon on mobile */
+        font-size: 24px;
+        color: white; 
+        cursor: pointer; 
+        margin-right: 10px;
+    }
+    .navbar-top{
+        display: none;
+    }
+    .menu li :hover{
+        background-color: #ffffff;
+        color: var(--primary);
+    }
+    
+    .menu {
+        display: none; /* Keep hidden by default for mobile */
+    }
+
+    .menu.active {
+        display: flex; 
+        flex-direction: column; /* Vertical layout */
+    }
+    .frm {
+        padding: 20px; /* Reduce padding */
+        margin: 30px 10px 10px 10px;
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;/* Reduce margin */
+    }
+
+    .frm form {
+        padding: 20px; /* Reduce form padding */
+    }
+
+    .frm .form input{
+        width: 100%; /* Full width on mobile */
+        height: 40px; 
+        margin: 0;/* Slightly smaller height */
+    }
+
+    .frm form input[type=submit] {
+        width: 100%; /* Full width for submit button */
+    }
+
+    .frm form legend {
+        font-size: 20px; /* Slightly smaller font size */
+    }
+    
+    .frm .form {
+        margin: 10px 0; /* Adjust margin for inputs */
+    }
+}
+
+
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .icon {
+        display: block; /* Show icon on mobile */
+        font-size: 24px;
+        color: white; 
+        cursor: pointer; 
+        margin-right: 20px;
+    }
+    
+    .logo img {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+    }
+
+    .logo p {
+        font-size: 16px;
+    }
+    
+    .menu {
+        display: none; /* Keep hidden by default for mobile */
+    }
+
+    .menu.active {
+        display: flex; 
+        flex-direction: column; /* Vertical layout */
+    }
+    .menu li :hover{
+        background-color: #ffffff;
+        color: var(--primary);
+    }
+    
+}
+
+/* Laptop Styles */
+@media (min-width: 1024px) {
+    .icon {
+        display: none; /* Hide the menu icon on laptops */
+    }
+    .logo img {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%; 
+    }
+
+    .logo p {
+        font-size: 16px;
+    }
+   
+    
+
+    .menu {
+        display: flex; 
+        justify-content: flex-end; 
+        width: 100%; 
+        background-color: transparent; 
+        position: static; 
+    }
+
+    .menu ul {
+        display: flex; 
+        flex-direction: row; 
+        padding: 0;
+        margin: 0;
+        align-items: center; 
+    }
+
+    .menu li {
+        list-style: none; 
+        margin: 0 20px; 
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: var(--white); 
+        font-size: 18px; 
+        padding: 16px 10px; 
+        display: block; 
+    }
+
+}

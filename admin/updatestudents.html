@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>updatestudents</title>
+    <link rel="icon" type="image/x-icon" href="img/collagelogo.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            max-width: 90%;
+            height: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        .top {
+            background-color: #1D3B53;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-size: 20px;
+            height: 50px;
+            align-items: center;
+            text-transform: capitalize;
+        }
+        
+        .top h4 {
+            font-size: 18px;
+        }
+        
+        .bottom p {
+            font-size: 18px;
+            padding: 20px 0 0 30px;
+            text-align: center;
+        }
+        
+        .bottom form {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .bottom form div input {
+            width: 90%;
+            max-width: 300px;
+            height: 50px;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+        
+        .bottom form div button {
+            width: 170px;
+            height: 50px;
+            border: none;
+            background-color: #1A82C4;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: -20px;
+        }
+        /* Responsive Styles */
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            .top {
+                font-size: 18px;
+            }
+            .bottom p {
+                font-size: 16px;
+            }
+            .bottom form div input {
+                width: 100%;
+            }
+            .bottom form div button {
+                width: 190px;
+                margin-left: -3px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <h4>Update the student details</h4>
+            <i class="fa fa-close" onclick="redirect()"></i>
+        </div>
+        <div class="bottom">
+            <p><b>Note:</b> Here that to update the Mess due of the single student</p>
+            <form method="POST" action="updateStudent.php">
+                <div>
+                    <input type="text" placeholder="Enter the Amount" name="amount" required>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function redirect() {
+            window.location.href = "singlestudent.php";
+        }
+    </script>
+</body>
+
+</html>

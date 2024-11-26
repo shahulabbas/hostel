@@ -1,0 +1,564 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary: #1D3B53;
+    --body: #EFEFEF;
+    --button1: #1A82C4;
+    --shadow: rgba(91, 93, 95, 0.2) 0px 8px 24px;
+    --white: #ffffff;
+    --black: #000000;
+}
+body{
+    background: #EFEFEF;    
+    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+.first{
+    width: 300px;
+    height: 100vh;
+    border-right: 2px solid #000;
+}
+.left-panel {
+    width: 300px;  
+    background-color:var(--primary);  
+    color: white;  
+    padding: 20px;  
+    position: fixed;  
+    height: 100vh;  
+    overflow-y: auto; 
+    border-right: 5px solid #000;
+     
+}
+
+.right-panel {
+    overflow-y: auto; 
+    height: 100vh;
+    flex-grow: 1;  
+}
+
+.table {
+    width: 100%; 
+    border-collapse: collapse;  
+}
+
+.table th, .table td {
+    border: 1px solid #dee2e6;  
+    padding: 10px;  
+    text-align: left; 
+    white-space: normal;  
+    word-wrap: break-word;  
+}
+
+.table th {
+    background-color: var(--primary);  
+    color: #fff;  
+}
+.left-panel>.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}.left-panel>.top i{
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+}
+
+.left-panel .main{
+    display: flex;
+}
+
+
+
+.more-btn {
+    background-color: transparent; 
+    color: white;  
+    border: 2px solid white;  
+    border-radius: 5px;  
+    padding: 10px;  
+    cursor: pointer; 
+    margin-bottom: 20px;  
+    transition: background-color 0.3s; 
+}
+
+.more-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);  
+}
+
+.more-options a,
+.menu a {
+    display: block;  
+    padding: 10px;  
+    color: white;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    transition: background-color 0.3s; 
+ }
+
+.more-options a:hover,
+.menu a:hover,.logout:hover {
+    background-color: rgba(255, 255, 255, 0.2);  
+}
+
+.logout {
+    border-radius: 5px;  
+    transition: background-color 0.3s; 
+}
+
+.logout button {
+    background-color: transparent;  
+    border: none;  
+    color: white;  
+    cursor: pointer; 
+    font-size: 16px;  
+    transition: color 0.3s; 
+    display: flex;
+    align-items: center; 
+}
+.logout button .fa{
+    font-size: 20px;
+}
+.logout button a {
+    color: inherit;  
+    text-decoration: none;  
+}
+
+.logout button:hover{
+    background: none;
+}
+.menu ul {
+    list-style-type: none; 
+    padding: 0;  
+}
+
+.menu li {
+    margin: 10px 0;  
+}
+
+.menu li a {
+    display: flex;  
+    align-items: center; 
+    color: white;  
+    transition: color 0.3s;  
+}
+.bar{
+    width: 100%;
+    height: 20px;
+}
+.menu li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.fa {
+    margin-right: 10px;  
+}
+
+.navbar-top {
+    background-color: #a6abaf;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    list-style: none; 
+    margin: 0 ; 
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px; 
+}
+
+.nav-link {
+    text-decoration: none; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+.nav-link:hover{
+    color: var(--primary);
+}
+
+.box>i{
+    color: #FFFFFF;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box>i:hover{
+    color: var(--primary);
+
+}
+header {
+    background-color: var(--primary);
+}
+
+.header {
+    margin: 1px 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    width: 100%;
+    height: 80px;
+}
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around; 
+    align-items: center;
+    gap: 5px; 
+    width: 100%;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    margin: 20px;
+}
+
+.logo p {
+    white-space: nowrap; 
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center; 
+}
+.header>.close{
+    display: none;
+}
+.header .close i{
+    color: #FFFFFF;
+    cursor: pointer;
+}
+@media screen and (max-width:767px) {
+    .logo p{
+      font-size: 10px;
+    }
+    .navbar-top{
+        display: none;
+    }
+    .header>.close{
+        display: block;
+    }
+    .header{
+        padding: 0;
+    }
+    .logo img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%; 
+        margin: 0;
+    }
+    .left-panel{
+        border-right:none;     
+
+    }
+    .first{
+        display: none;
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+    }
+    .left-panel>.top i{
+        cursor: pointer;
+        font-size: 20px;
+        display: block;
+    }
+}
+
+.container5 {
+    margin-top: 20px;
+    overflow-x: auto; 
+}
+
+
+.container6 {
+    overflow-x: auto; /* Enables horizontal scrolling */
+}
+
+.table {
+    width: 100%; /* Makes the table take the full width of its container */
+    border-collapse: collapse; /* Collapses borders */
+}
+
+.table th, .table td {
+    padding: 8px; /* Adds some padding */
+    text-align: left; /* Aligns text to the left */
+}
+
+.table th {
+    background-color:var(--primary); /* Background color for headers */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .table thead {
+        display: none; /* Hides the table header on mobile */
+    }
+
+    .table tr {
+        display: flex; /* Makes each row a block */
+        margin-bottom: 15px; 
+        justify-content:space-between;
+        background:var(--primary);
+        color:#fff;/* Adds some space between rows */
+    }
+
+    .table td {
+        display: flex; /* Flex for better alignment */
+        justify-content: space-between; /* Space between content */
+        padding: 10px; /* Adds some padding */
+       border:none;
+        width: 150px; /* Adds borders */
+    }
+
+    .table td::before {
+        content: attr(data-label); /* Uses data-label for responsive design */
+        font-weight: bold; /* Makes label bold */
+        text-transform: uppercase; /* Transforms text to uppercase */
+        margin-right: 10px; /* Adds some space */
+    }
+}
+
+.footer {
+    background-color: #1D3B53;
+    color: white;
+    padding: 0;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+}
+
+.footer svg {
+    fill: #ffffff;
+    transform: rotate(180deg);
+}
+
+.footer .container1 {
+    text-align: center;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container1 img {
+    width: 800px;  
+}
+
+.footer img {
+    max-height: 110px;
+    position: relative;
+}
+
+.footer p {
+    margin-top: 20px;
+    color: white;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.footer .social-icons li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer .social-icons a {
+    display: flex;
+    border-radius: 50%;
+    background-color: white;
+    color: #1D3B53;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer .social-icons a:hover {
+    color: #1D3B53;
+}
+
+.footer .bottom-footer {
+    margin-top: 20px;
+    color: white;
+}
+
+.footer .bottom-footer a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.footer .bottom-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer .container1 {
+        padding: 20px 0; 
+    }
+
+    .container1 img {
+        width: 100%;  
+        max-width: 400px; 
+    }
+
+    .footer p {
+        font-size: 14px;  
+        margin-top: 15px; 
+    }
+
+    .footer .social-icons a {
+        font-size: 18px;  
+        padding: 8px;  
+    }
+
+    .footer .bottom-footer {
+        font-size: 14px;  
+    }
+}
+
+@media (max-width: 480px) {
+    .container1 img {
+        max-width: 350px;  
+    }
+
+    .footer p {
+        font-size: 10px; 
+    }
+
+    .footer .social-icons a {
+        font-size: 10px; 
+    }
+
+    .footer .bottom-footer {
+        font-size: 12px; 
+        margin-top: 15px; 
+    }
+}
+/* General container styling */
+.container5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(82, 82, 82, 0.5), rgba(106, 103, 103, 0.5)),url('img/newcollage.jpg'); 
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    height:70vh;
+}
+
+/* Form styling */
+form {
+    background:transparent;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: rgba(91, 93, 95, 0.2) 0px 8px 24px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(5px);
+}
+
+/* Input field styling */
+.container5 input,button{
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border 0.3s;
+    margin:30px;
+}
+
+/* Input field focus effect */
+.input-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Submit button styling */
+.container5 button {
+    width: 300px;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.button-group button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    .input-group input, 
+    .button-group button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+.container6{
+    display:flex;
+    flex-direction:column;
+    margin-top:50px;
+}
+.container6 .box2{
+    display:flex;
+}
+.container6 .box2>.box{
+    width: 120px;
+    height:50px;
+    background:var(--button1);
+    margin:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+    color:#fff;
+}
